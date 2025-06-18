@@ -1,0 +1,6 @@
+a=float(input("what s your  height in centimeters ?"))
+tall=145
+if a>=tall:
+    print("you are tall enough to ride")
+else:
+    print(" you need to grow some more to ride")

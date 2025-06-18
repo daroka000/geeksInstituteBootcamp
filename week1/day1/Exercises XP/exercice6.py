@@ -1,0 +1,5 @@
+my_original_tuple = (1, 100, 200, 300, 400) 
+my_list = list(my_original_tuple)   
+my_list.append(500)       
+new_tuple = tuple(my_list)               
+print(new_tuple)
