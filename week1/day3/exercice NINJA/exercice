@@ -1,0 +1,58 @@
+class Phone:
+    def __init__(self, phone_number):
+        self.phone_number = phone_number
+        self.call_history = []
+        self.messages = []
+
+    def call(self, other_phone):
+        call_record = f"{self.phone_number} called {other_phone.phone_number}"
+        print(call_record)
+        self.call_history.append(call_record)
+
+    def show_call_history(self):
+        print(f"Call history for {self.phone_number}:")
+        if not self.call_history:
+            print("No calls made.")
+        else:
+            for call in self.call_history:
+                print(call)
+
+    def send_message(self, other_phone, content):
+        message = {
+            'to': other_phone.phone_number,
+            'from': self.phone_number,
+            'content': content
+        }
+        self.messages.append(message)
+        print(f"Message sent from {self.phone_number} to {other_phone.phone_number}: {content}")
+
+    def show_outgoing_messages(self):
+        print(f"Outgoing messages from {self.phone_number}:")
+        outgoing = [msg for msg in self.messages if msg['from'] == self.phone_number]
+        if not outgoing:
+            print("No outgoing messages.")
+        else:
+            for msg in outgoing:
+                print(f"To {msg['to']}: {msg['content']}")
+
+    def show_incoming_messages(self):
+        print(f"Incoming messages to {self.phone_number}:")
+        print("To show incoming messages, collect messages from other phones sent to this number.")
+
+    def show_messages_from(self, other_phone):
+        print(f"Messages received from {other_phone.phone_number} to {self.phone_number}:")
+        
+        print("To show messages from others, a global message store or interaction between phones is needed.")
+
+if __name__ == "__main__":
+    phone1 = Phone("123-456-7890")
+    phone2 = Phone("987-654-3210")
+
+    phone1.call(phone2)
+    phone1.call(phone2)
+    phone1.show_call_history()
+
+    phone1.send_message(phone2, "Hello!")
+    phone1.send_message(phone2, "How are you?")
+    phone1.show_outgoing_messages()
+
