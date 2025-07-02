@@ -17,7 +17,7 @@ DB_PASSWORD = os.getenv("DB_PASSWORD")
 app=Flask(__name__)
 
 def insert_random_countries():
-    url = "https://restcountries.com/v3.1/all?fields=name,capital"
+    url = "https://restcountries.com/v3.1/all?fields=name,capital,flags,subregion,population"
     response = requests.get(url)
 
     if response.status_code != 200:
@@ -35,6 +35,7 @@ def insert_random_countries():
     )
     cursor = conn.cursor()
 
+
     for country in selected:
         name = country.get("name", {}).get("common", "N/A")
         capital_list = country.get("capital", [])
@@ -49,19 +50,41 @@ def insert_random_countries():
         VALUES (%s, %s, %s, %s, %s)
         """
         cursor.execute(insert_query, (name, capital, flag, subregion, population))
+    
 
     conn.commit()
     cursor.close()
     conn.close()
 
+
     return "add with succes", 200
 
-
+    
 # Route GET pour insérer les pays
 @app.route('/insert-countries', methods=['GET'])
 def insert_route():
     msg, status = insert_random_countries()
-    return jsonify({"message": msg}), status
+    conn = psycopg2.connect(
+        host=DB_HOST,
+        port=DB_PORT,
+        database=DB_NAME,
+        user=DB_USER,
+        password=DB_PASSWORD
+    )
+    cursor = conn.cursor()
+
+
+    cursor.execute("select * from Countries ")
+    all_countries = cursor.fetchall()
+    cursor.close()
+    conn.close()
+    return jsonify ({
+        "total" :len (all_countries),
+        "a":(all_countries)
+            
+        })
+
+    
 
 
 
