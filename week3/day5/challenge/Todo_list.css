@@ -1,0 +1,98 @@
+/* Basic reset & typography ---------------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background:rgb(231, 96, 119);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 3rem 1rem;
+  color:red;
+}
+
+/* Container -------------------------------------------------------------- */
+.todo-container {
+  background: white;
+  width: clamp(300px, 90vw, 500px);
+  border-radius: 1rem;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 10px 25px rgb(0 0 0 / 0.08);
+}
+h1 {
+  margin: 0 0 1.25rem;
+  text-align: center;
+  background: pink;
+}
+
+/* Form ------------------------------------------------------------------- */
+#todo-form {
+  display: flex;
+  gap: 0.5rem;
+}
+#todo-input {
+  flex: 1 1 auto;
+  padding: 0.6rem 0.8rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+}
+#todo-input:focus {
+  outline: none;
+  border-color: #0ea5e9;
+}
+#todo-form button {
+  padding: 0 1.1rem;
+  border: none;
+  background:white;
+  color: #0ea5e9;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+#todo-form button:hover {
+  background:blueviolet;
+}
+
+/* Individual task line --------------------------------------------------- */
+.task {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  border-bottom: 1px solid #e2e8f0;
+  padding: 0.7rem 0;
+}
+.task label {
+  flex: 1 1 auto;
+  cursor: pointer;
+}
+
+
+.delete {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: #ef4444;
+  font-size: 1.1rem;
+  padding: 0;
+}
+.delete:hover {
+  color: #b91c1c;
+}
+
+#clear-all {
+    margin-top: 1rem;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+    border: none;
+    background: pink;
+    color: red;
+    border-radius: 0.4rem;
+    cursor: pointer;
+  
+    float: right;          /* Aligner à droite */
+  }
