@@ -1,0 +1,125 @@
+body {
+  background-color: blueviolet;
+  background-image: 
+    url('https://github.com/devtlv/studentsGitHub/blob/master/JS/Week%204/Day5/Mini%20Projects/Mini%20Project%201%20(Robots)/circuit-pattern.png?raw=true');
+  background-repeat: repeat;
+  background-size: contain;
+  background-blend-mode: multiply;
+}
+#nave {
+  background-color: rgb(75, 182, 75);
+  padding: 15px 5%;
+  margin-top: -1%;
+  margin-left: -1%;
+  width: 100%;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@font-face {
+  font-family: 'Brightier';
+  src: url('./fonts/Brightier.woff2') format('woff2'),
+       url('./fonts/Brightier.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+nav{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    
+}
+/* Style de la navigation */
+#nave nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: rgb(75, 182, 75);
+  flex-wrap: wrap; /* utile pour responsive */
+}
+
+/* Centrer le texte du logo à gauche */
+#logo {
+  flex: 1;
+}
+
+/* Centrer la barre de recherche */
+#search {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  
+}
+
+/* Style de l'input de recherche */
+#searchid {
+  padding: 10px 15px;
+  width: 250px;
+  border-radius: 25px;
+  
+  font-size: 16px;
+  outline: none;
+}
+
+
+/* Style général du conteneur principal */
+#containers {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive grid */
+  gap: 20px;
+  padding: 20px;
+  background-color: blueviolet;
+  background-image: 
+      url('https://github.com/devtlv/studentsGitHub/blob/master/JS/Week%204/Day5/Mini%20Projects/Mini%20Project%201%20(Robots)/circuit-pattern.png?raw=true');
+  background-repeat: repeat;
+  background-size: contain;
+  background-blend-mode: multiply;
+  
+}
+
+/* Style pour chaque carte robot */
+#containers div {
+  background-color: rgb(187, 187, 235);
+  background-image: 
+      url('https://github.com/devtlv/studentsGitHub/blob/master/JS/Week%204/Day5/Mini%20Projects/Mini%20Project%201%20(Robots)/card-pattern.png?raw=true');
+  background-repeat: repeat;
+  background-size: contain;
+  background-blend-mode: multiply;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.2s;
+}
+
+#containers div:hover {
+  transform: scale(1.05); /* Effet zoom au survol */
+}
+
+/* Image du robot */
+#containers img {
+  width: 100%;
+  max-width: 150px;
+  height: auto;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+/* Nom */
+#containers h1 {
+  font-size: 20px;
+  margin: 10px 0 5px;
+  color: #333;
+}
+
+/* Username et email */
+#containers p {
+  margin: 4px 0;
+  color: #666;
+  font-size: 14px;
+}
