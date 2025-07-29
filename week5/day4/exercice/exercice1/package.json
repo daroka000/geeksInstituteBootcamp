@@ -1,0 +1,11 @@
+{
+  "name": "exercice",
+  "version": "1.0.0",
+  "main": "products.js",
+  "scripts": {
+    "start": "node shope.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
